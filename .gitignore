@@ -1,0 +1,11 @@
+node_modules
+dist
+.pnpm-store
+.env
+.env.local
+coverage
+*.log
+.DS_Store
+prisma/dev.db
+# Added by code-review-graph
+.code-review-graph/
