@@ -202,6 +202,7 @@ export async function startProcessingConsumer(deps: {
 }): Promise<void> {
   const kafka = createKafkaClient("processing-service", deps.env.KAFKA_BROKERS);
   const consumer = await connectConsumer(
+    kafka,
     kafka.consumer({ groupId: CONSUMER_GROUP }),
     [ORDER_TOPICS.created]
   );

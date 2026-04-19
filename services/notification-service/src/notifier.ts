@@ -46,6 +46,7 @@ export async function startNotificationConsumer(deps: {
 }): Promise<void> {
   const kafka = createKafkaClient("notification-service", deps.env.KAFKA_BROKERS);
   const consumer = await connectConsumer(
+    kafka,
     kafka.consumer({ groupId: CONSUMER_GROUP }),
     [ORDER_TOPICS.processing, ORDER_TOPICS.completed, ORDER_TOPICS.failed]
   );
